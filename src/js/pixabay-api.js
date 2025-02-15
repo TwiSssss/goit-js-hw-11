@@ -17,8 +17,8 @@ export const getImages = (wordKey) => {
         .then((response) => {
             return response.data.hits;
         })
-        .catch((error) => {
-            console.error(error);
+        .catch((err) => {
+            console.error(err);
             return [];
         });
 };
