@@ -1,0 +1,81 @@
+p {
+ text-align: center;
+ margin-bottom: 20px;
+}
+
+.form {
+ width: 250px;
+ padding: 10px;
+ border: 1px solid #797979;
+ border-radius: 4px;
+ margin: 0 auto;
+}
+
+.form label {
+ display: block;
+ margin-bottom: 8px;
+ font-size: 16px;
+}
+
+.form input[type="number"] {
+ width: 100%;
+ padding: 5px;
+ margin-top: 4px;
+ box-sizing: border-box;
+ border: 1px solid #797979;
+ border-radius: 4px;
+ outline: none;
+}
+
+.form input[type="number"]:focus {
+ border-color: #4a90e2;
+ box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.form fieldset {
+ border: 1px solid #797979;
+ border-radius: 4px;
+ padding: 10px;
+ margin: 10px 0;
+}
+
+.form legend {
+ padding: 0 5px;
+ font-size: 16px;
+}
+
+.form .radio-group {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+}
+
+.form input[type="radio"] {
+ margin-right: 5px;
+}
+
+.form fieldset label {
+ display: inline-flex;
+ align-items: center;
+ margin-right: 15px;
+}
+
+.form button {
+ width: 100%;
+ padding: 8px;
+ color: #fff;
+ background-color: #0fb336;
+ border: 1px solid #797979;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 16px;
+}
+
+.iziToast-message {
+ color: #fff !important;
+}
+
+.iziToast > .iziToast-close,
+.iziToast > .iziToast-progressbar > div {
+ display: none !important;
+}
