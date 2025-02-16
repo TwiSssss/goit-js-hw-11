@@ -17,12 +17,13 @@ const refs = {
     loader: document.querySelector(".loader"),
 };
 
-refs.searchBtn.addEventListener("click", (event) => {
+refs.searchBtn.addEventListener("submit", (event) => {
     event.preventDefault();
     const wordKey = refs.searchInput.value.trim();
     if (!wordKey) {
         return;
     }
+    refs.gallery.innerHTML = "";
     refs.searchInput.value = "";
     refs.loader.style.display = "inline-block";
     getImages(wordKey)
@@ -32,6 +33,7 @@ refs.searchBtn.addEventListener("click", (event) => {
                     message: "Sorry, there are no images matching your search query. Please try again!",
                     position: "topRight",
                 });
+                refs.gallery.innerHTML = "";
             } else {
                 refs.gallery.innerHTML = photosTemplate(images);
                 lightbox.refresh();
@@ -39,7 +41,7 @@ refs.searchBtn.addEventListener("click", (event) => {
         })
         .catch((err) => {
             console.error(err);
-            return [];
+            refs.gallery.innerHTML = "";
         })
         .finally(() => {
             refs.loader.style.display = "none";
