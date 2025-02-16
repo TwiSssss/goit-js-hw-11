@@ -12,12 +12,13 @@ let lightbox = new SimpleLightbox(".gallery-item a", {
 
 const refs = {
     gallery: document.querySelector(".gallery"),
+    searchMenu: document.querySelector(".search-menu"),
     searchBtn: document.querySelector(".search-btn"),
     searchInput: document.querySelector(".search-input"),
     loader: document.querySelector(".loader"),
 };
 
-refs.searchBtn.addEventListener("submit", (event) => {
+refs.searchMenu.addEventListener("submit", (event) => {
     event.preventDefault();
     const wordKey = refs.searchInput.value.trim();
     if (!wordKey) {
@@ -33,7 +34,7 @@ refs.searchBtn.addEventListener("submit", (event) => {
                     message: "Sorry, there are no images matching your search query. Please try again!",
                     position: "topRight",
                 });
-                refs.gallery.innerHTML = "";
+                refs.gallery.innerHTML = "";  
             } else {
                 refs.gallery.innerHTML = photosTemplate(images);
                 lightbox.refresh();
